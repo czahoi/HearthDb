@@ -1,38 +1,53 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" DefaultsTargets="DownloadBaseData">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyTitle>HearthDb</AssemblyTitle>
     <Company>HearthSim</Company>
     <Product>HearthDb</Product>
-    <Copyright>Copyright © HearthSim 2022</Copyright>
-    <AssemblyVersion>26.2.0.0</AssemblyVersion>
-    <FileVersion>26.2.0.0</FileVersion>
+    <Copyright>Copyright © HearthSim</Copyright>
+    <AssemblyVersion>36.6.0</AssemblyVersion>
+    <FileVersion>36.6.0</FileVersion>
     <LangVersion>8</LangVersion>
   </PropertyGroup>
 
-    <!-- Remove everything from the hsdata repo except for CardDefs.xml. -->
     <ItemGroup>
-        <Compile Remove="hsdata/**" />
-        <EmbeddedResource Remove="hsdata/**" />
-        <None Remove="hsdata/**" />
+        <Compile Remove="carddata/**" />
+        <EmbeddedResource Remove="carddata/**" />
+        <None Remove="carddata/**" />
 
-        <EmbeddedResource Include="hsdata/CardDefs.xml">
-            <LogicalName>$(RootNamespace).CardDefs.xml</LogicalName>
+        <EmbeddedResource Include="carddata/CardDefs.base.xml">
+            <LogicalName>$(RootNamespace).CardDefs.base.xml</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="carddata/CardDefs.base.etag">
+            <LogicalName>$(RootNamespace).CardDefs.base.etag</LogicalName>
         </EmbeddedResource>
     </ItemGroup>
 
-    <!-- Clone hsdata into a subdirectory of the project if it isn't there already -->
-    <Target Name="CloneHSData" Condition="!Exists('$(MSBuildProjectDirectory)/hsdata')" BeforeTargets="PreBuildEvent">
-        <Message Importance="normal" Text="Couldn't find hsdata repo." />
-        <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="git clone --depth=1 https://github.com/HearthSim/hsdata.git hsdata" />
-    </Target>
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+            <_Parameter1>HearthDb.Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
 
-    <!-- If the hsdata repo is already there, fetch the latest. -->
-    <Target Name="UpdateHSData" Condition="Exists('$(MSBuildProjectDirectory)/hsdata')" BeforeTargets="PreBuildEvent">
-        <Message Importance="normal" Text="Fetching latest card data from hsdata repo." />
-        <Exec WorkingDirectory="$(MSBuildProjectDirectory)/hsdata" Command="git fetch" />
-        <Exec WorkingDirectory="$(MSBuildProjectDirectory)/hsdata" Command="git reset --hard origin/master" />
-    </Target>
+  <PropertyGroup>
+    <DownloaderOutDir>$(SolutionDir)HearthDb.CardDefsDownloader/bin/Release/net8.0/</DownloaderOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DocumentationFile>bin\Debug\HearthDb.xml</DocumentationFile>
+    <NoWarn>1701;1702;IL2121;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DocumentationFile>bin\Release\HearthDb.xml</DocumentationFile>
+    <NoWarn>1701;1702;IL2121;1591</NoWarn>
+  </PropertyGroup>
+
+  <Target Name="DownloadBaseData" BeforeTargets="PreBuildEvent">
+    <MSBuild Projects="$(SolutionDir)HearthDb.CardDefsDownloader/HearthDb.CardDefsDownloader.csproj" Properties="Configuration=Release"/>
+    <Exec Condition="Exists('$(DownloaderOutDir)HearthDb.CardDefsDownloader')" Command='"$(DownloaderOutDir)HearthDb.CardDefsDownloader" "$(SolutionDir)HearthDb/carddata"'/>
+    <Exec Condition="Exists('$(DownloaderOutDir)HearthDb.CardDefsDownloader.exe')" Command='"$(DownloaderOutDir)HearthDb.CardDefsDownloader.exe" "$(SolutionDir)HearthDb/carddata"'/>
+  </Target>
 
 </Project>

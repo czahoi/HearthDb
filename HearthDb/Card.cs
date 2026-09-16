@@ -68,54 +68,7 @@ namespace HearthDb
 		}
 
 		private CardSet? _set;
-		public CardSet Set
-		{
-			get
-			{
-				if (_set == null)
-				{
-					// HACK to fix missing set value on Hall of Fame cards
-					if (new[]
-					{
-						CardIds.Collectible.Mage.IceBlock,
-						CardIds.Collectible.Neutral.ColdlightOracle,
-						CardIds.Collectible.Neutral.MoltenGiant,
-
-						//2019
-						CardIds.Collectible.Druid.Naturalize,
-						CardIds.Collectible.Warlock.Doomguard,
-						CardIds.Collectible.Paladin.DivineFavor,
-						CardIds.Collectible.Neutral.BakuTheMooneater,
-						CardIds.Collectible.Neutral.GennGreymane,
-						CardIds.Collectible.Druid.GloomStag,
-						CardIds.Collectible.Mage.BlackCat,
-						CardIds.Collectible.Priest.GlitterMoth,
-						CardIds.Collectible.Shaman.MurksparkEel,
-
-						//2020
-						CardIds.Collectible.Priest.AuchenaiSoulpriest,
-						CardIds.Collectible.Priest.HolyFire,
-						CardIds.Collectible.Priest.ShadowformREWARD,
-						CardIds.Collectible.Priest.ProphetVelen,
-						CardIds.Collectible.Priest.DivineSpirit,
-						CardIds.Collectible.Priest.NorthshireClericREWARD,
-						CardIds.Collectible.Neutral.AcolyteOfPain,
-						CardIds.Collectible.Neutral.Spellbreaker,
-						CardIds.Collectible.Neutral.MindControlTech,
-						CardIds.Collectible.Neutral.MountainGiant,
-						CardIds.Collectible.Neutral.LeeroyJenkins,
-					}.Contains(Id))
-					{
-						_set = CardSet.HOF;
-					}
-					else
-					{
-						_set = (CardSet)Entity.GetTag(CARD_SET);
-					}
-				}
-				return _set.Value;
-			}
-		}
+		public CardSet Set => _set ??= (CardSet)Entity.GetTag(CARD_SET);
 
 		public Faction Faction => (Faction)Entity.GetTag(FACTION);
 
@@ -137,21 +90,25 @@ namespace HearthDb
 		private int? _spellSchool;
 		public int SpellSchool => _spellSchool ??= Entity.GetTag(SPELL_SCHOOL);
 
+		private string[] _mechanics;
 		public string[] Mechanics
 		{
 			get
 			{
+				if(_mechanics != null)
+					return _mechanics;
 				var mechanics = Dictionaries.Mechanics.Keys.Where(mechanic => Entity.GetTag(mechanic) > 0).Select(x => Dictionaries.Mechanics[x]);
 				var refMechanics =
 					Dictionaries.ReferencedMechanics.Keys.Where(mechanic => Entity.GetReferencedTag(mechanic) > 0)
 								.Select(x => Dictionaries.ReferencedMechanics[x]);
-				return mechanics.Concat(refMechanics).ToArray();
+				return _mechanics = mechanics.Concat(refMechanics).ToArray();
 			}
 		}
 
 		public string ArtistName => Entity.GetInnerValue(ARTISTNAME);
 
-		public string[] EntourageCardIds => Entity.EntourageCards.Select(x => x.CardId).ToArray();
+		private string[] _entourageCardIds;
+		public string[] EntourageCardIds => _entourageCardIds ??= Entity.EntourageCards.Select(x => x.CardId).ToArray();
 
 		public Locale DefaultLanguage { get; set; } = Locale.enUS;
 
@@ -185,11 +142,14 @@ namespace HearthDb
 				text = text.Substring(0, atCounterMatch.Index) + replacement + text.Substring(atCounterMatch.Index + atCounterMatch.Length);
 			}
 
-			var parts = text.Split('@');
-			if (parts.Count() >= 2)
-				text = parts[0].Trim();
+			if (Entity.GetTag(PLAYER_TAG_THRESHOLD_TAG_ID) > 0)
+			{
+				var parts = text.Split('@');
+				if (parts.Count() >= 2)
+					text = parts[0].Trim();
+			}
 
-			return text;
+			return text.Replace("@", "");
 
 		}
 
@@ -204,8 +164,14 @@ namespace HearthDb
 		private int? _techLevel;
 		public int TechLevel => _techLevel ??= Entity.GetTag(TECH_LEVEL);
 
+		private bool? _premium;
+		public bool Premium => _premium ??= Entity.GetTag(PREMIUM) > 0;
+
 		private bool? _isBaconPoolMinion;
 		public bool IsBaconPoolMinion => _isBaconPoolMinion ??= Entity.GetTag(IS_BACON_POOL_MINION) > 0;
+
+		private bool? _baconBuddyMinion;
+		public bool BaconBuddyMinion => _baconBuddyMinion ??= Entity.GetTag(BACON_BUDDY) > 0;
 
 		private int? _battlegroundsArmorTier;
 		public int BattlegroundArmorTier => _battlegroundsArmorTier ??= Entity.GetTag((GameTag)1723);

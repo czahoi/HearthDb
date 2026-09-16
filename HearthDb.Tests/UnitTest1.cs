@@ -11,7 +11,8 @@ namespace HearthDb.Tests
 		public void BasicTest()
 		{
 			Assert.AreEqual("Flame Lance", Cards.All["AT_001"].Name);
-			Assert.AreEqual("Flammenlanze", Cards.All["AT_001"].GetLocName(Locale.deDE));
+			//  non-enUS no longer included by default. CardDefsLoadTest verifies this works.
+			// Assert.AreEqual("Flammenlanze", Cards.All["AT_001"].GetLocName(Locale.deDE));
 			Assert.AreEqual("Nutthapon Petchthai", Cards.All["AT_001"].ArtistName);
 			Assert.AreEqual(CardSet.TGT, Cards.All["AT_001"].Set);
 			Assert.AreEqual(true, Cards.All["AT_001"].Collectible);
@@ -43,14 +44,14 @@ namespace HearthDb.Tests
 		[TestMethod]
 		public void HeroCardTest()
 		{
-			Assert.IsTrue(Cards.Collectible.ContainsKey(CardIds.Collectible.Hunter.DeathstalkerRexxarICECROWN));
+			Assert.IsTrue(Cards.Collectible.ContainsKey(CardIds.Collectible.Hunter.DeathstalkerRexxar));
 			Assert.AreEqual("Deathstalker Rexxar", Cards.GetFromDbfId(43398).Name);
 		}
 
 		[TestMethod]
 		public void TestMechanics()
 		{
-			var deadscaleKnight = Cards.Collectible[CardIds.Collectible.Neutral.DeadscaleKnightICECROWN];
+			var deadscaleKnight = Cards.Collectible[CardIds.Collectible.Neutral.DeadscaleKnight];
 			Assert.IsTrue(deadscaleKnight.Mechanics.Contains("Lifesteal"));
 			var giantWasp = Cards.Collectible[CardIds.Collectible.Neutral.GiantWasp];
 			Assert.IsTrue(giantWasp.Mechanics.Contains("Poisonous"));
@@ -59,7 +60,7 @@ namespace HearthDb.Tests
 		[TestMethod]
 		public void TestCardText()
 		{
-			var lucentbark = Cards.GetFromDbfId(51796, false);
+			var lucentbark = Cards.GetFromDbfId(51796);
 			System.Console.WriteLine(lucentbark.Text);
 			Assert.IsTrue(lucentbark.Text.Contains("(5 left!)"));
 
@@ -79,8 +80,8 @@ namespace HearthDb.Tests
 			Assert.IsTrue(cramSession.Text.Contains("Draw $1 card"));
 			Assert.IsTrue(cramSession.Text.Contains("improved by"));
 
-			var flameLance = Cards.All[CardIds.Collectible.Mage.FlameLance];
-			Assert.IsTrue(flameLance.GetLocText(Locale.frFR).Contains("Inflige $8 points"));
+			var flameLance = Cards.All[CardIds.Collectible.Mage.FlameLanceTGT];
+			Assert.IsTrue(flameLance.GetLocText(Locale.enUS).Contains("$25"));
 
 			var elvenArcher = Cards.All[CardIds.Collectible.Neutral.ElvenArcherVanilla];
 			Assert.IsTrue(elvenArcher.Text.Contains("Deal 1 damage"));
@@ -94,6 +95,9 @@ namespace HearthDb.Tests
 
 			var hatredReactor = Cards.All[CardIds.NonCollectible.Warlock.HatredReactorToken];
 			Assert.IsTrue(hatredReactor.Text.Contains("give it +1/+1"));
+			
+			var candle = Cards.All[CardIds.NonCollectible.Neutral.EverburningCandleToken];
+			Assert.IsFalse(candle.Text.Contains("@"));
 
 		}
 
