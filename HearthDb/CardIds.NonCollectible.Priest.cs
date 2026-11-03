@@ -2954,7 +2954,7 @@ namespace HearthDb
                 public const string TheHarvesterofEnvy_CopiedFromOpponentEnchantment = "REV_011e";
 
                 /// <summary>
-                /// Costs (3) less.<br/>
+                /// Costs (2) less.<br/>
                 /// Enchantment
                 /// </summary>
                 public const string MysteriousVisitor_MindReadEnchantment = "REV_246e2";
@@ -3494,13 +3494,13 @@ namespace HearthDb
                 public const string GravedawnVoidbulb_VoidTouchedEnchantment = "TLC_815e";
 
                 /// <summary>
-                /// <b>Quest:</b> Cast 4 Holy spells. <b>Reward:</b> Life's Breath.<br/>
+                /// <b>Quest:</b> Cast 6 Holy spells. <b>Reward:</b> Life's Breath.<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string ReachEquilibrium_CleanseTheShadowToken = "TLC_817t";
 
                 /// <summary>
-                /// <b>Quest:</b> Cast 4 Shadow spells. <b>Reward:</b> Death's Touch.<br/>
+                /// <b>Quest:</b> Cast 6 Shadow spells. <b>Reward:</b> Death's Touch.<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string ReachEquilibrium_CorruptTheLightToken = "TLC_817t2";
@@ -3687,7 +3687,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Lifesteal</b><br/>
-                /// 5-Cost 5/5 Beast Minion
+                /// 3-Cost 3/4 Beast Minion
                 /// </summary>
                 public const string ElderWordManifest_VoidwingToken = "BE_222t";
 

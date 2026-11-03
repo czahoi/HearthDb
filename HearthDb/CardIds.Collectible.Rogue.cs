@@ -212,14 +212,14 @@ namespace HearthDb
                 public const string BroodchamberTunneler = "BE_720";
 
                 /// <summary>
-                /// Costs (2) less for each <b>Combo</b> card played this turn. <b>Battlecry:</b> Draw a card.<br/>
+                /// Costs (2) less for each <b>Combo</b> card played this turn. <b>Battlecry:</b> Draw 2 cards.<br/>
                 /// 8-Cost 4/5 Beast Minion
                 /// </summary>
                 public const string AqirGoliath = "BE_721";
 
                 /// <summary>
-                /// <b>Deathrattle:</b> Get two 1-Cost Larvae with <b><b>Combo</b>s</b> that trigger a Hero Power from another class.<br/>
-                /// 3-Cost 4/2 Beast Minion
+                /// <b>Deathrattle:</b> Get two Larvae with <b><b>Combo</b>s</b> that trigger a Hero Power from another class. They cost (0).<br/>
+                /// 4-Cost 5/4 Beast Minion
                 /// </summary>
                 public const string AqirSwarmer = "BE_722";
 
@@ -2252,7 +2252,7 @@ namespace HearthDb
                 public const string Evasion = "LOOT_214";
 
                 /// <summary>
-                /// <b>Deathrattle:</b> Summon a 1/1 copy of a minion from your hand.<br/>
+                /// <b>Deathrattle:</b> Summon a minion from your hand. Set its stats to 1/1.<br/>
                 /// 5-Cost 3/3 Minion
                 /// </summary>
                 public const string KoboldIllusionist = "LOOT_412";

@@ -835,7 +835,7 @@ namespace HearthDb
                 public const string AnachronosCorePlaceholder = "CORE_RLK_919";
 
                 /// <summary>
-                /// <b>Divine Shield</b> After a friendly minion loses <b>Divine Shield</b>,&amp; give a minion in your hand +5/+5.<br/>
+                /// <b>Divine Shield</b> After a friendly minion loses <b>Divine Shield</b>, give a minion in your hand +5/+5.<br/>
                 /// 6-Cost 5/5 Minion
                 /// </summary>
                 public const string HighlordFordragonCore = "CORE_SW_047";
@@ -2299,7 +2299,7 @@ namespace HearthDb
                 public const string BrashBattlemaster = "MEND_800";
 
                 /// <summary>
-                /// <b>Divine Shield</b> After this loses <b>Divine Shield</b>,&amp; give your Silver Hand Recruits +1 Health this game.<br/>
+                /// <b>Divine Shield</b> After this loses <b>Divine Shield</b>, give your Silver Hand Recruits +1 Health this game.<br/>
                 /// 3-Cost 3/1 Draenei Minion
                 /// </summary>
                 public const string ResilientSavior = "MEND_801";
@@ -2671,7 +2671,7 @@ namespace HearthDb
                 public const string CityTax = "SW_046";
 
                 /// <summary>
-                /// <b>Divine Shield</b> After a friendly minion loses <b>Divine Shield</b>,&amp; give a minion in your hand +5/+5.<br/>
+                /// <b>Divine Shield</b> After a friendly minion loses <b>Divine Shield</b>, give a minion in your hand +5/+5.<br/>
                 /// 6-Cost 5/5 Minion
                 /// </summary>
                 public const string HighlordFordragon = "SW_047";

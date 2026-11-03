@@ -734,13 +734,13 @@ namespace HearthDb
                 public const string MoguWarmaster = "BE_008";
 
                 /// <summary>
-                /// <b>Old God.</b> <b>Battlecry:</b> End your turn. Yogg-saron takes an extra turn for you. <i>(Once per game)</i><br/>
+                /// <b>Old God.</b> <b>Battlecry:</b> End your turn. Yogg-Saron takes an extra turn for you. <i>(Once per game)</i><br/>
                 /// 9-Cost 7/5 Minion
                 /// </summary>
                 public const string MastermindYoggSaron = "BE_009";
 
                 /// <summary>
-                /// <b>Old God.</b> If you've triggered all 4 C'Thun abilities this game, this minion's abilities are tripled.<br/>
+                /// <b>Old God.</b> If you've triggered all 4 C'Thun abilities this game, this minion's abilities are quadrupled.<br/>
                 /// 10-Cost 12/12 Minion
                 /// </summary>
                 public const string CthunEyeOfTheEmpire = "BE_013";
@@ -759,7 +759,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Battlecry:</b> Reduce the Cost of a card in your hand by (5). This continues to the left and right with (1) less reduction.<br/>
-                /// 9-Cost 9/7 Minion
+                /// 10-Cost 9/7 Minion
                 /// </summary>
                 public const string MOTHER = "BE_036";
 
@@ -794,7 +794,7 @@ namespace HearthDb
                 public const string GargantuanSlitherer = "BE_204";
 
                 /// <summary>
-                /// <b><b>Reborn</b> </b><b>Deathrattle:</b>&amp; Give all minions in your hand +1/+1.<br/>
+                /// <b>Reborn</b> <b>Deathrattle:</b>&amp; Give all minions in your hand +1 Attack.<br/>
                 /// 1-Cost 0/1 Mechanical Minion
                 /// </summary>
                 public const string UnstablePrototype = "BE_207";
@@ -831,7 +831,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Old God.</b> <b>Battlecry:</b> If you've spent 30 Mana on minions this game, gain <b>Immune</b> for 1 turn. <i>({0} left!)</i>30<b>Old God.</b> <b>Battlecry:</b> If you've spent 30 mana on minions this game, gain <b>Immune</b> for 1 turn. <i>(Ready!)</i>30<b>Old God.</b> <b>Battlecry:</b> If you've spent 30 mana on minions this game, gain <b>Immune</b> for 1 turn.<br/>
-                /// 10-Cost 10/10 Minion
+                /// 9-Cost 10/10 Minion
                 /// </summary>
                 public const string YshaarjTitanBane = "BE_784";
 
@@ -4027,7 +4027,7 @@ namespace HearthDb
                 public const string MaruutStonebinder = "DEEP_037";
 
                 /// <summary>
-                /// <b>Deathrattle:</b> Summon a slightly cracked Egg. <i>(Break 5 times to hatch a 20/20 Beast with <b>Taunt</b>!)</i><br/>
+                /// <b>Deathrattle:</b> Summon a slightly cracked Egg. <i>(Break 5 times to hatch into a 20/20 Beast!)</i><br/>
                 /// 3-Cost 0/3 Minion
                 /// </summary>
                 public const string TheEggOfKhelos = "DINO_410";
@@ -9168,7 +9168,7 @@ namespace HearthDb
                 public const string TemporalTraveler = "TIME_434";
 
                 /// <summary>
-                /// <b>Taunt</b> <b>Battlecry:</b>&amp; Double this minion's Health.<br/>
+                /// <b>Taunt</b> <b>Battlecry:</b> Double this minion's Health.<br/>
                 /// 5-Cost 5/3 Dragon Minion
                 /// </summary>
                 public const string SoldierOfTheBronze = "TIME_720";

@@ -188,7 +188,7 @@ namespace HearthDb
                 public const string RitualOfExcess = "BE_005";
 
                 /// <summary>
-                /// In 2 turns, summon two 3/5 C'thraxxi with <b>Taunt</b>.<br/>
+                /// In 2 turns, summon two 2/4 C'thraxxi with <b>Taunt</b>.<br/>
                 /// 2-Cost Spell
                 /// </summary>
                 public const string RitualOfSummoning = "BE_085";
@@ -1088,7 +1088,7 @@ namespace HearthDb
                 public const string Asphyxiodon = "DINO_132";
 
                 /// <summary>
-                /// Set a friendly minion's stats to 1/1. Fill your board with copies of it.<br/>
+                /// Set a friendly non-<b>Legendary</b> minion's stats to 1/1. Fill your board with copies of it.<br/>
                 /// 8-Cost Spell
                 /// </summary>
                 public const string BatMask = "DINO_402";
@@ -2805,7 +2805,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// Split a random minion in your hand into two halves.<br/>
-                /// 5-Cost Spell
+                /// 7-Cost Spell
                 /// </summary>
                 public const string Divergence = "TIME_030";
 

@@ -21,7 +21,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Lifesteal</b><br/>
-                /// 2-Cost 3/3 Minion
+                /// 2-Cost 3/4 Minion
                 /// </summary>
                 public const string GraftedKnight = "BE_285";
 
@@ -242,7 +242,7 @@ namespace HearthDb
                 public const string TombGuardiansCore = "CORE_RLK_118";
 
                 /// <summary>
-                /// After a friendly Undead dies,&amp; draw a card.<br/>
+                /// After a friendly Undead dies, draw a card.<br/>
                 /// 3-Cost 2/4 Minion
                 /// </summary>
                 public const string AcolyteOfDeathCore = "CORE_RLK_121";
@@ -915,7 +915,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Prepare</b>. <b>Battlecry:</b> Destroy all your other minions. Draw a card and refresh a Mana for each one destroyed.<br/>
-                /// 5-Cost 5/3 Minion
+                /// 6-Cost 6/3 Minion
                 /// </summary>
                 public const string Sawbones = "JAIL_444";
 
@@ -1328,7 +1328,7 @@ namespace HearthDb
                 public const string MeatGrinder = "RLK_120";
 
                 /// <summary>
-                /// After a friendly Undead dies,&amp; draw a card.<br/>
+                /// After a friendly Undead dies, draw a card.<br/>
                 /// 3-Cost 2/4 Minion
                 /// </summary>
                 public const string AcolyteOfDeath = "RLK_121";

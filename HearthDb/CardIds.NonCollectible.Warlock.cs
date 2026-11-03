@@ -4714,7 +4714,7 @@ namespace HearthDb
                 public const string GodfatherKazakus_ConvictedForConspiracyToken = "CAP_405t2";
 
                 /// <summary>
-                /// Steal 2 cards from your opponent's hand.<br/>
+                /// Steal a card from your opponent's hand.<br/>
                 /// Spell
                 /// </summary>
                 public const string GodfatherKazakus_SentencedForSmugglingToken = "CAP_405t3";
@@ -4726,13 +4726,13 @@ namespace HearthDb
                 public const string GodfatherKazakus_CrateOfContrabandToken = "CAP_405t4";
 
                 /// <summary>
-                /// Give minions in your hand and battlefield +3/+3.<br/>
+                /// Give minions in your hand and battlefield +2/+2.<br/>
                 /// Spell
                 /// </summary>
                 public const string GodfatherKazakus_SpuriousShivToken = "CAP_405t5";
 
                 /// <summary>
-                /// Summon three random 3-Cost minions.<br/>
+                /// Summon three random 2-Cost minions.<br/>
                 /// Spell
                 /// </summary>
                 public const string GodfatherKazakus_CriminalContractToken = "CAP_405t6";
@@ -4835,7 +4835,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Taunt</b><br/>
-                /// 4-Cost 3/5 Minion
+                /// 3-Cost 2/4 Minion
                 /// </summary>
                 public const string RitualofSummoning_CthraxBruteToken = "BE_085t";
 

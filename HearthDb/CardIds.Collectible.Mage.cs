@@ -2205,7 +2205,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Prepare</b> <b>Battlecry:</b> If you've cast a spell this turn, cast two random Mage <b>Secrets</b>.<br/>
-                /// 5-Cost 4/4 Minion
+                /// 5-Cost 4/3 Minion
                 /// </summary>
                 public const string TricksyImproviser = "JAIL_321";
 
@@ -2828,7 +2828,7 @@ namespace HearthDb
                 public const string TimelooperToki = "TIME_861";
 
                 /// <summary>
-                /// After you summon an Elemental,&amp; deal 3 damage to a random enemy.<br/>
+                /// After you summon an Elemental, deal 3 damage to a random enemy.<br/>
                 /// 4-Cost 4/5 Elemental Minion
                 /// </summary>
                 public const string WindsweptPageturner = "TLC_220";

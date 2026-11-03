@@ -4719,7 +4719,7 @@ namespace HearthDb
                 public const string ArcaneTripwire_TrippedArcaneTripwireToken = "JAIL_881t";
 
                 /// <summary>
-                /// +1/+1<br/>
+                /// +1 Attack.<br/>
                 /// Enchantment
                 /// </summary>
                 public const string UnstablePrototype_PowerUpEnchantment = "BE_207e";

@@ -1388,7 +1388,7 @@ namespace HearthDb
                 public const string EmberscarredWhelp = "FIR_927";
 
                 /// <summary>
-                /// Destroy a minion, then return it to life with full Health.<br/>
+                /// Destroy a non-<b>Legendary</b> minion, then return it to life with full Health.<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string ReincarnateNAXX = "FP1_025";
@@ -3410,7 +3410,7 @@ namespace HearthDb
                 public const string ChargedHammerWONDERS = "WON_321";
 
                 /// <summary>
-                /// Destroy a minion, then return it to life with full Health.<br/>
+                /// Destroy a non-<b>Legendary</b> minion, then return it to life with full Health.<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string ReincarnateWONDERS = "WON_335";

@@ -1946,7 +1946,7 @@ namespace HearthDb
                 public const string IreboundBrute = "SW_037";
 
                 /// <summary>
-                /// <b>Questline:</b> Draw 4 cards in one turn. <b>Reward:</b> Reduce the Cost of the cards drawn by (1).<br/>
+                /// <b>Questline:</b> Draw 5 cards in one turn. <b>Reward:</b> Reduce the Cost of the cards drawn by (1).<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string FinalShowdown = "SW_039";

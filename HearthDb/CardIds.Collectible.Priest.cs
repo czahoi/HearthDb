@@ -182,7 +182,7 @@ namespace HearthDb
                 public const string Xyrella = "BAR_735";
 
                 /// <summary>
-                /// <b>Battlecry:</b> If you've cast 2 Shadow spells while holding this, choose a C'Thun ability to trigger. <i>({0} left!)</i>2<b>Battlecry:</b> If you've cast 2 Shadow spells while holding this, choose a C'Thun ability to trigger. <i>(Ready)</i>2<b>Battlecry:</b> If you've cast 2 Shadow spells while holding this, choose a C'Thun ability to trigger.<br/>
+                /// <b>Battlecry:</b> If you've cast a Shadow spell while holding this, choose a C'Thun ability to trigger.<br/>
                 /// 3-Cost 3/2 Minion
                 /// </summary>
                 public const string DarkDeacon = "BE_012";
@@ -212,7 +212,7 @@ namespace HearthDb
                 public const string ElderWordForesight = "BE_221";
 
                 /// <summary>
-                /// Summon a 5/5 Voidwing with <b>Lifesteal</b>. <i>(The next Shadow spell you play repeats this!)</i><br/>
+                /// Summon two 3/4 Voidwings with <b>Lifesteal</b>. <i>(The next Shadow spell you play repeats this!)</i><br/>
                 /// 5-Cost Spell
                 /// </summary>
                 public const string ElderWordManifest = "BE_222";
@@ -818,7 +818,7 @@ namespace HearthDb
                 public const string TheHarvesterOfEnvyCorePlaceholder = "CORE_REV_011";
 
                 /// <summary>
-                /// <b>Battlecry:</b> Reduce the Cost of cards copied from your opponent by (3).<br/>
+                /// <b>Battlecry:</b> Reduce the Cost of cards copied from your opponent by (2).<br/>
                 /// 2-Cost 2/3 Minion
                 /// </summary>
                 public const string MysteriousVisitorCorePlaceholder = "CORE_REV_246";
@@ -2516,7 +2516,7 @@ namespace HearthDb
                 public const string TheHarvesterOfEnvy = "REV_011";
 
                 /// <summary>
-                /// <b>Battlecry:</b> Reduce the Cost of cards copied from your opponent by (3).<br/>
+                /// <b>Battlecry:</b> Reduce the Cost of cards copied from your opponent by (2).<br/>
                 /// 2-Cost 2/3 Minion
                 /// </summary>
                 public const string MysteriousVisitor = "REV_246";
@@ -2864,7 +2864,7 @@ namespace HearthDb
                 public const string GravedawnSunbloom = "TLC_816";
 
                 /// <summary>
-                /// <b>Quest:</b> Cast 4 Holy spells <b>Reward:</b> Life's Breath. <b>Quest:</b> Cast 4 Shadow spells. <b>Reward:</b> Death's Touch.<br/>
+                /// <b>Quest:</b> Cast 6 Holy spells. <b>Reward:</b> Life's Breath. <b>Quest:</b> Cast 6 Shadow spells. <b>Reward:</b> Death's Touch.<br/>
                 /// 1-Cost Spell
                 /// </summary>
                 public const string ReachEquilibrium = "TLC_817";

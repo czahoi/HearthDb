@@ -1634,7 +1634,7 @@ namespace HearthDb
                 public const string IreboundBrute_PreppedToStrikeEnchantment = "SW_037e";
 
                 /// <summary>
-                /// <b>Questline:</b> Draw 5 cards in one turn. <b>Reward:</b> Reduce the Cost of the cards drawn by (1).<br/>
+                /// <b>Questline:</b> Draw 6 cards in one turn. <b>Reward:</b> Reduce the Cost of the cards drawn by (1).<br/>
                 /// Spell
                 /// </summary>
                 public const string FinalShowdown_GainMomentumToken = "SW_039t";
@@ -1646,7 +1646,7 @@ namespace HearthDb
                 public const string FinalShowdown_FasterMovesToken = "SW_039t2e";
 
                 /// <summary>
-                /// <b>Questline:</b> Draw 5 cards in one turn. <b>Reward:</b> Demonslayer Kurtrus.<br/>
+                /// <b>Questline:</b> Draw 6 cards in one turn. <b>Reward:</b> Demonslayer Kurtrus.<br/>
                 /// Spell
                 /// </summary>
                 public const string FinalShowdown_CloseThePortalToken = "SW_039t3";

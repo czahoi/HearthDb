@@ -201,7 +201,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Assemble</b> a Mech. Get an 'Overdrive'.<br/>
-                /// 2-Cost Spell
+                /// 1-Cost Spell
                 /// </summary>
                 public const string Tinker = "BE_553";
 

@@ -195,7 +195,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// <b>Battlecry:</b> Gain 20 Armor. In 2 turns, convert your Armor into a Golem with that many stats and <b>Taunt</b>.<br/>
-                /// 7-Cost 7/7 Minion
+                /// 6-Cost 6/6 Minion
                 /// </summary>
                 public const string Setesh = "BE_557";
 
@@ -440,7 +440,7 @@ namespace HearthDb
 
                 /// <summary>
                 /// Deal $1 damage to all minions. <i>(Improved for each minion on the battlefield.)</i><br/>
-                /// 6-Cost Spell
+                /// 5-Cost Spell
                 /// </summary>
                 public const string Decimation = "CATA_581";
 
