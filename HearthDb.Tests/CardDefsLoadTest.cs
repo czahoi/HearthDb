@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using HearthDb.CardDefs;
 using HearthDb.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,6 +39,23 @@ namespace HearthDb.Tests
             Assert.AreEqual("Nutthapon Petchthai", Cards.All["AT_001"].ArtistName);
             Assert.AreEqual("Flame Lance", Cards.All["AT_001"].GetLocName(Locale.enUS));
             Assert.AreEqual("Flammenlanze", Cards.All["AT_001"].GetLocName(Locale.deDE));
+        }
+
+        [TestMethod]
+        public void ParseCardDefs_SharesTagStringsAcrossEntities()
+        {
+            var cardDefs = Cards.GetBundledBaseData();
+
+            var healthTags = cardDefs.Entites
+                .Select(e => e.Tags.FirstOrDefault(t => t.EnumId == (int)GameTag.HEALTH))
+                .Where(t => t != null)
+                .Take(2)
+                .ToList();
+
+            Assert.AreEqual(2, healthTags.Count);
+            Assert.AreNotSame(healthTags[0], healthTags[1]);
+            Assert.AreSame(healthTags[0].Name, healthTags[1].Name);
+            Assert.AreSame(healthTags[0].TypeString, healthTags[1].TypeString);
         }
 
         [TestMethod]

@@ -11,11 +11,23 @@ namespace HearthDb.CardDefs
 		[XmlAttribute("enumID")]
 		public int EnumId { get; set; }
 
+		private string _name;
+		private string _typeString;
+
+		// intern repeated tag attributes, XmlSerializer allocates a copy per tag
 		[XmlAttribute("name")]
-		public string Name { get; set; }
+		public string Name
+		{
+			get => _name;
+			set => _name = value == null ? null : string.Intern(value);
+		}
 
 		[XmlAttribute("type")]
-		public string TypeString { get; set; }
+		public string TypeString
+		{
+			get => _typeString;
+			set => _typeString = value == null ? null : string.Intern(value);
+		}
 
 		[XmlAttribute("value")]
 		public int Value { get; set; }
